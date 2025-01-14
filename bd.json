@@ -1,0 +1,49 @@
+{
+    "users": [
+        {
+            "username": "eduardo",
+            "password": "12345678",
+            "email": "angeloeduardo445@gmail.com"
+        },
+        {
+            "username": "sofia",
+            "password": "amora112",
+            "email": "angeloeduardo445@gmail.com"
+        },
+        {
+            "username": "eduardo",
+            "password": "$2y$10$QR4P6YCCr743wyKyxgJIVeJ8S3FnLI14\/ebPa\/LnDrok.zAywV.MS",
+            "email": "angeloeduardo445@gmail.com"
+        },
+        {
+            "username": "eduardo",
+            "password": "$2y$10$UwCTLKTttS2jFU.l7s.wO.mrf.t1DUWJ3fP1iWTgbfwYqMxwDiyIy",
+            "email": "angeloeduardo445@gmail.com"
+        },
+        {
+            "username": "eduardo",
+            "password": "$2y$10$DoAcFx1olGRmdUXVyrLa8.NVGNIfD1ms7deAbaJyV0731kN5c.SGu",
+            "email": "angeloeduardo445@gmail.com"
+        },
+        {
+            "username": "eduardo",
+            "password": "$2y$10$B\/O2GXznq2eapMc4pCNt7.GYiDOsvRgKRYsDfXvhju2zceDCJDm76",
+            "email": "angeloeduardo445@gmail.com"
+        },
+        {
+            "username": "sofia",
+            "password": "$2y$10$1\/YhsvyBZihccA1xuom.s.zRr\/F9k69WvgsyDViefyC5Sfn9Qpq7K",
+            "email": "angeloeduardo445@gmail.com"
+        },
+        {
+            "username": "eduardo",
+            "password": "$2y$10$U7Vb9td6qbVw35Y\/N.aFWeKnHPXe9lDuEW2sAs4.3G4SnBmaBQNS2",
+            "email": "angeloeduardo445@gmail.com"
+        },
+        {
+            "username": "sofia",
+            "password": "$2y$10$FMq9DXEHFgG.L4ThoRcF9.lGkJjmxxFOCyZba9mCp5zmPZDzf8bzq",
+            "email": "sfdsjflasjsd455@gmail.com"
+        }
+    ]
+}

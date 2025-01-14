@@ -1,31 +1,41 @@
 <?php
 
 session_start();
-$password = $_POST["password"];
+$password = $_POST["senha"];
 $email = $_POST["email"];
-$usuario = $_POST["usuario"];
+$usuario = $_POST["name"];
 
 $Validate = [];
 
 
-if (strlen($password) > 8)
+if (strlen($password) < 8)
     $Validate[] = "password must be at lest 8 characters long.";
 
-if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $Validate[] = "$email is a valid email adress";
-    $_SESSION['feedback'] = "Email invalido.";
-} else {
-    $Validate[] = "$email is not a valid email adress";
-}
+if (!filter_var($email, FILTER_VALIDATE_EMAIL))
+    $Validate[] = "$email is not a valid email address";
+
+if (strlen($usuario) < 5)
+    $Validate[] = "username must be at least 5 minimum characters long.";
 
 if (!empty($Validate)) {
-    echo "<ul>";
-    foreach ($Validate as  $erros) {
-        echo "<li>" . $erros . "<li>";
-    }
-} else {
-    echo "Todos os dados estão validos!";
+    $_SESSION["errors"] = $Validate;
+    header("location:user.php");
+    exit();
 }
-echo "</ul>";
-?>
-//header("location: index.php");
+
+$bd = file_get_contents("bd.json");
+$bd = json_decode($bd, true);
+
+$user = [
+    "username" => $usuario,
+    "password" =>  password_hash($password, PASSWORD_DEFAULT, ['cost' => 10]) ,
+    "email" => $email,
+];
+
+$bd["users"][] = $user;
+
+file_put_contents("bd.json", json_encode($bd, JSON_PRETTY_PRINT ));
+
+$_SESSION["sucess"] = "User created";
+header('location:user.php')
+    ?>

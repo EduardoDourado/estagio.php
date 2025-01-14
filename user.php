@@ -1,7 +1,9 @@
 <?php
 session_start();
-$feedback = $_SESSION['feedback'] ?? false;
-unset($_SESSION['feedback']);
+$errors = $_SESSION["errors"] ?? false;
+unset($_SESSION["errors"]);
+$sucess = $_SESSION["sucess"] ?? false;
+unset($_SESSION["sucess"]);
 ?>
 
 
@@ -16,6 +18,21 @@ unset($_SESSION['feedback']);
 </head>
 
 <body>
+
+    <div id="error" style="color: crimson;">
+        <?php
+        if ($errors != false) {
+            echo "<ul>";
+            foreach ($errors as $error) {
+                echo "<li>" . $error. "<li>";
+            }
+            echo "</ul>";
+        } 
+        if ($sucess != false) {
+            echo "User successfully created";
+        }
+        ?>
+    </div>
     <div>
         <form action="createUser.php" method="post">
             <input type="text" id="name" name="name" placeholder="Seu nome">
@@ -27,11 +44,11 @@ unset($_SESSION['feedback']);
     </div>
     <?php
 
-    if ($feedback != false) {
-        echo "<p>$feedback</p>";
-
-    }
-
+    // if ($feedback != false) {
+    //     echo "<p>$feedback</p>";
+    
+    // }
+    
     ?>
     </div>
 </body>

@@ -20,7 +20,7 @@ unset($_SESSION['feedback']);
         <form action="createUser.php" method="post">
             <input type="text" id="name" name="name" placeholder="Seu nome">
             <input type="password" id="senha" name="senha" placeholder="Sua senha">
-            <input type="text" id="email" name="email" placeholder="Seu email">
+            <input type="email" id="email" name="email" placeholder="Seu email">
             <input type="submit" value="enviar dados">
 
         </form>

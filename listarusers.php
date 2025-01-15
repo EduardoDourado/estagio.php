@@ -31,7 +31,7 @@ $bd = json_decode($bd);
                         echo "<td>" . $index . "</td>";
                         echo "<td>" . $user->username . "</td>";
                         echo "<td>" . $user->email . "</td>";
-                        echo "<td style='padding: 1rem'> <a href='updateuser.php?update=$index'>Editar</a> | <a href='deleteUser.php?delete=$index'>Deletar</a> </td>";
+                        echo "<td style='padding: 1rem'> <a href='updateuserhtml.php?update=$index'>Editar</a> | <a href='deleteUser.php?delete=$index'>Deletar</a> </td>";
                         echo "<tr>";
                     }
                     ?>

@@ -1,6 +1,7 @@
 <?php
 session_start();
 $errors = $_SESSION["errors"] ?? false;
+
 unset($_SESSION["errors"]);
 $sucess = $_SESSION["sucess"] ?? false;
 unset($_SESSION["sucess"]);
@@ -24,10 +25,10 @@ unset($_SESSION["sucess"]);
         if ($errors != false) {
             echo "<ul>";
             foreach ($errors as $error) {
-                echo "<li>" . $error. "<li>";
+                echo "<li>" . $error . "<li>";
             }
             echo "</ul>";
-        } 
+        }
         if ($sucess != false) {
             echo "User successfully created";
         }

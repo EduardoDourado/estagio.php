@@ -28,13 +28,13 @@ $bd = json_decode($bd, true);
 
 $user = [
     "username" => $usuario,
-    "password" =>  password_hash($password, PASSWORD_DEFAULT, ['cost' => 10]) ,
+    "password" => password_hash($password, PASSWORD_DEFAULT, ['cost' => 10]),
     "email" => $email,
 ];
 
 $bd["users"][] = $user;
 
-file_put_contents("bd.json", json_encode($bd, JSON_PRETTY_PRINT ));
+file_put_contents("bd.json", json_encode($bd, JSON_PRETTY_PRINT));
 
 $_SESSION["sucess"] = "User created";
 header('location:user.php')

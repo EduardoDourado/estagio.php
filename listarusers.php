@@ -1,6 +1,14 @@
 <?php
+
+use App\Database\Database;
+include "Database.php";
+
 $bd = file_get_contents("bd.json");
 $bd = json_decode($bd);
+
+$database = new Database();
+
+$users = $database->getUserData();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -26,7 +34,7 @@ $bd = json_decode($bd);
                 </thead>
                 <tbody>
                     <?php
-                    foreach ($bd->users as $index => $user) {
+                    foreach ($bd->users as $index => $user ) {
                         echo "<tr>";
                         echo "<td>" . $index . "</td>";
                         echo "<td>" . $user->username . "</td>";

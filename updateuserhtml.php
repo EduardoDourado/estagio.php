@@ -1,15 +1,24 @@
-<?php $index = $_GET['update'];
-$bd = file_get_contents('bd.json');
-$bd = json_decode($bd);
-if (!isset($bd->users[$index])) {
-    header('location: listarusers.php');
-}
+<?php
+$index = $_GET['update'];
+// $bd = file_get_contents('bd.json');
+// $bd = json_decode($bd);
+// if (!isset($bd->users[$index])) {
+//     header('location: listarusers.php');
+// }
 session_start();
 $errors = $_SESSION["errors"] ?? false;
 unset($_SESSION["errors"]);
 $sucess = $_SESSION["sucess"] ?? false;
 unset($_SESSION["sucess"]);
-$user = $bd->users[$index];
+// $user = $bd->users[$index];
+
+include("Database.php");
+use App\Database\Database;
+
+$database = new Database();
+$user = $database->getUserDataById($index);
+
+
 ?>
 
 <!DOCTYPE html>

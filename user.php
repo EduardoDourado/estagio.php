@@ -40,7 +40,7 @@ unset($_SESSION["sucess"]);
             <input type="password" id="senha" name="senha" placeholder="Sua senha">
             <input type="email" id="email" name="email" placeholder="Seu email">
             <input type="submit" value="enviar dados">
-
+            <input type="submit" value="listar" <?php echo "<td style='padding: 1rem'> <a href='listarusers.php>Listar</a>"?> placeholder="Lista">
         </form>
     </div>
     <?php

@@ -17,17 +17,17 @@ use App\Database\Database;
 
 $database = new Database();
 $user = $database->getUserDataById($index);
-
+$client = $database->getClientDataById($index);
 
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Update User</title>
 </head>
 
 <body>
@@ -45,13 +45,22 @@ $user = $database->getUserDataById($index);
         }
         ?>
         <div>
-            <h2>Editar usuarios</h2>
+            <h2>Editar clientes</h2>
             <form action="updateuser.php?index=<?php echo $index ?>" method="post">
                 <input type="text" id="name" name="name" placeholder="Seu nome" required
-                    value="<?php echo $user->username ?>">
-                <input type="password" id="senha" name="senha" placeholder="Sua senha" required>
-                <input type="email" id="email" name="email" placeholder="Seu email" required
-                    value="<?php echo $user->email ?>">
+                    value="<?php echo $client->nome ?>">
+
+                <input type="text" id="cpf" name="cpf" placeholder="Seu cpf" required
+                value="<?php echo $client->cpf  ?>" >
+
+                <input type="text" id="nascimento" name="nascimento" placeholder="Seu nascimento" required
+                    value="<?php echo $client->nascimento ?>"> 
+
+                    <input type="text" id="endereco" name="endereco" placeholder="Seu endereço" required
+                    value="<?php echo $client->endereco ?>">
+
+                  
+
                 <input type="submit" value="enviar dados">
 
             </form>

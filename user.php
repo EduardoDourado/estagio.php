@@ -10,7 +10,7 @@ unset($_SESSION["sucess"]);
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -35,12 +35,16 @@ unset($_SESSION["sucess"]);
         ?>
     </div>
     <div>
-        <form action="createUser.php" method="post">
+        <form action="createcliente.php" method="post">
             <input type="text" id="name" name="name" placeholder="Seu nome">
-            <input type="password" id="senha" name="senha" placeholder="Sua senha">
-            <input type="email" id="email" name="email" placeholder="Seu email">
+            <input type="text" id="cpf" name="cpf" placeholder="Seu cpf">
+            <input type="text" id="nascimento" name="nascimento" placeholder="Nascimento">
+            <input type="text" id="endereco" name="endereco" placeholder="Endereço">
+            <!-- <input type="password" id="senha" name="senha" placeholder="Sua senha">
+            <input type="email" id="email" name="email" placeholder="Seu email"> -->
+
             <input type="submit" value="enviar dados">
-            <input type="submit" value="listar" <?php echo "<td style='padding: 1rem'> <a href='listarusers.php>Listar</a>"?> placeholder="Lista">
+            <input type="submit" value="listar" <?php echo "<td style='padding: 1rem'> <a href='listarclientes.php>Listar</a>"?> >
         </form>
     </div>
     <?php

@@ -1,29 +1,9 @@
 {
-    "users": [
-        {
-            "username": "eduaro",
-            "password": "$2y$10$BKH\/bZt4gyQQIqr92lsqaOwjjR5e2aiQQGWoz.j3FY5Ll7pW.14sO",
-            "email": "angeloeduardo445@gmail.com"
-        },
-        {
-            "username": "veigar",
-            "password": "$2y$10$rQ4Sril73q6iXTmLYL7a\/OlBvXXAeTrBr7yyQtlsCldJm2ljHaDOq",
-            "email": "angeloeduardo445@gmail.com"
-        },
-        {
-            "username": "sofia",
-            "password": "$2y$10$IAKCseGktYRZY0xl63p5xeQRuC.hYxQF8Rpa14yQHiHNowTa8hJYu",
-            "email": "shukaruleshukarule@gmail.com"
-        },
-        {
-            "username": "shukarulindo",
-            "password": "$2y$10$tXxnAyqxUAdWMacJrOSNE.0fG6S5Zy3jItj9nGDjCUdQHFyjEv7\/O",
-            "email": "angeloeduardo445@gmail.com"
-        },
-        {
-            "username": "veigar",
-            "password": "$2y$10$IqdFA\/s1PfvkkxaoI\/B8me\/W7Lxb6Hcyyqfyyht\/4\/JO1OYFy0wtK",
-            "email": "angeloeduardo445@gmail.com"
-        }
+    "users":[
+
+    ],
+
+    "clients":[
+    
     ]
 }

@@ -8,7 +8,8 @@ $bd = json_decode($bd);
 
 $database = new Database();
 
-$users = $database->getUserData();
+// $users = $database->getUserData();
+$client =  $database->getClientData()
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -28,17 +29,21 @@ $users = $database->getUserData();
                 <thead>
                     <tr>
                         <th>#ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
+                        <th>Nome</th>
+                        <th>Cpf</th>
+                        <th>Nascimento</th>
+                        <th>Endereço</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    foreach ($bd->users as $index => $user ) {
+                    foreach ($bd->clients as $index => $client ) {
                         echo "<tr>";
                         echo "<td>" . $index . "</td>";
-                        echo "<td>" . $user->username . "</td>";
-                        echo "<td>" . $user->email . "</td>";
+                        echo "<td>" . $client->nome . "</td>";
+                        echo "<td>" . $client->cpf . "</td>";
+                        echo "<td>" . $client->nascimento . "</td>";
+                        echo "<td>" . $client->endereco . "</td>";
                         echo "<td style='padding: 1rem'> <a href='updateuserhtml.php?update=$index'>Editar</a> | <a href='deleteUser.php?delete=$index'>Deletar</a> </td>";
                         echo "<tr>";
                     }

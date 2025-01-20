@@ -1,9 +1,11 @@
 {
-    "users":[
-
+    "users": [
+        {
+            "usuario": "eduardo",
+            "senha": "$2y$10$6DDl3tOCArYkHxzytZzXJOdbkDkRFndcs1ncLKVfi5KL6T8hmVjG2",
+            "email": "angeloeduardo445@gmail.com",
+            "nascimento": "13112007"
+        }
     ],
-
-    "clients":[
-    
-    ]
+    "clients": []
 }

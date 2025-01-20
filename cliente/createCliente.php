@@ -8,7 +8,7 @@ $nascimento = $_POST["nascimento"];
 $endereco = $_POST["endereco"];
 
 use App\Database\Database;
-include "Database.php";
+include "database.php";
 
 $database = new Database();
 

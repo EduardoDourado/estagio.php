@@ -1,10 +1,12 @@
 <?php
 
-use estagio.php\Database\App\Database;
-include "Database.php";
+// use estagio.php\Database\App\Database;
+include ("../database.php");
 
-$bd = file_get_contents("bd.json");
-$bd = json_decode($bd);
+use App\Database\Database;
+
+
+
 
 $database = new Database();
 $users = $database->getUserData();
@@ -36,13 +38,13 @@ $users = $database->getUserData();
                 </thead>
                 <tbody>
                     <?php
-                    foreach ($bd->clients as $index => $client ) {
+                    foreach ($users as $index => $user ) {
                         echo "<tr>";
                         echo "<td>" . $index . "</td>";
-                        echo "<td>" . $client->usuario . "</td>";
-                        echo "<td>" . $client->email . "</td>";
-                        echo "<td>" . $client->senha . "</td>";
-                        echo "<td>" . $client->nascimento . "</td>";
+                        echo "<td>" . $user->usuario . "</td>";
+                        echo "<td>" . $user->email . "</td>";
+                        echo "<td>" . $user->senha . "</td>";
+                        echo "<td>" . $user->nascimento . "</td>";
                         echo "<td style='padding: 1rem'> <a href='updateUserHtml.php?update=$index'>Editar</a> | <a href='deleteUser.php?delete=$index'>Deletar</a> </td>";
                         echo "<tr>";
                     }

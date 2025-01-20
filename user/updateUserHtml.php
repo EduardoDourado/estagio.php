@@ -8,9 +8,9 @@ unset($_SESSION["errors"]);
 $sucess = $_SESSION["sucess"] ?? false;
 unset($_SESSION["sucess"]);
 
-include("Database.php");
-
 use App\Database\Database;//root
+include("../database.php");
+
 
 $database = new Database();
 

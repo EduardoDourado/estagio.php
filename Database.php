@@ -10,11 +10,24 @@ class Database
     public function __construct()
     {
 
-        $db = file_get_contents("bd.json");
+
+
+        $db = file_get_contents(__DIR__ . "/bd.json");
         $this->db = json_decode($db);
 
     }
+    public function saveUser($usuario, $senha, $email, $nascimento)
+    {
+        $user = [
+            "usuario" => $usuario,
+            "senha" => $senha,
+            "email" => $email,
+            "nascimento" => $nascimento,
 
+        ];
+        $this->db->users[] = $user;
+        $this->saveData();
+    }
     public function getUserData()
     {
         return $this->db->users;
@@ -42,11 +55,21 @@ class Database
         $this->db->clients[] = $client;
         $this->saveData();
     }
-
+    public function updateUser($usuario, $senha, $email, $nascimento, $index)
+    {
+        $user = [
+            "usuario" => $usuario,
+            "senha" => password_hash($senha, PASSWORD_DEFAULT, ['cost' => 10]),
+            "email" => $email,
+            "nascimento" => $nascimento,
+        ];
+        $this->db->users[$index] = $user;
+        $this->saveData();
+    }
     public function saveData()
     {
-        file_put_contents("bd.json", json_encode($this->db, JSON_PRETTY_PRINT));
-        json_encode($this->db, JSON_PRETTY_PRINT);
+        file_put_contents(__DIR__ . "/bd.json", json_encode($this->db, JSON_PRETTY_PRINT));
+
     }
 
     // public function validaCpf($cpf)

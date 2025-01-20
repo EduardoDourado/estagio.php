@@ -1,16 +1,20 @@
 <?php
-$bd = file_get_contents("bd.json");
-$bd = json_decode($bd);//puxar dados do banco
 session_start();
-$password = $_POST["senha"];
+$senha = $_POST["senha"];
 $email = $_POST["email"];
-$usuario = $_POST["name"];
+$usuario = $_POST["usuario"];
+$nascimento = $_POST["nascimento"];
 $index = $_GET['index'];
+
+use App\Database\Database;
+include "../database.php";
+
+$database = new Database();
+
 
 $Validate = [];
 
-
-if (strlen($password) < 8)
+if (strlen($senha) < 8)
     $Validate[] = "password must be at lest 8 characters long.";
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL))
@@ -29,18 +33,10 @@ if (!isset($bd->users[$index])) {
     $errors = "usuario não encontrado";
 }
 
-
-$user = [
-    "usuario" => $usuario,
-    "senha" => password_hash($senha, PASSWORD_DEFAULT, ['cost' => 10]),
-    "email" => $email,
-    "nascimento"=> $nascimento,
-];
-
-$bd->users[$index] = $user;
-
-file_put_contents("bd.json", json_encode($bd, JSON_PRETTY_PRINT));
+$database->updateUser($usuario, $senha, $email, $nascimento, $index);
 
 $_SESSION["sucess"] = "Usuario Atualizado";
 header("location:updateUserHtml.php?update=$index");
+
+
 ?>

@@ -9,16 +9,15 @@ $nascimento = $_POST["nascimento"];
 
 
 use App\Database\Database;
-include "Database.php";
+include "../database.php";
 
 $database = new Database();
-
 
 
 $Validate = [];
 
 
-if (strlen($nome) < 5)
+if (strlen($usuario) < 5)
     $Validate[] = "username must be at least 5 minimum characters long.";
 
 
@@ -28,9 +27,10 @@ if (!empty($Validate)) {
     header("location:user.php");
     exit();
 }
-if (!$cpf = false) {
-   $Validate = $cpf;
-}
+// if (!$cpf = false) {
+//    $Validate = $cpf;
+// }
+$database->saveUser($usuario, $senha, $email, $nascimento);
 
 
 

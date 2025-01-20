@@ -1,8 +1,7 @@
 <?php
-
-include "Database.php";
-
 use App\Database\Database;
+
+include "database.php";
 
 $bd = file_get_contents("bd.json");
 $bd = json_decode($bd);

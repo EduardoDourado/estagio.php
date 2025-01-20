@@ -1,15 +1,14 @@
 <?php
 
-use App\Database\Database;
+use estagio.php\Database\App\Database;
 include "Database.php";
 
 $bd = file_get_contents("bd.json");
 $bd = json_decode($bd);
 
 $database = new Database();
+$users = $database->getUserData();
 
-// $users = $database->getUserData();
-$client =  $database->getClientData()
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -29,10 +28,10 @@ $client =  $database->getClientData()
                 <thead>
                     <tr>
                         <th>#ID</th>
-                        <th>Nome</th>
-                        <th>Cpf</th>
-                        <th>Nascimento</th>
-                        <th>Endereço</th>
+                        <th>Usuario</th>
+                        <th>Email</th>
+                        <th>Senha</th>
+                        <th>Data de nascimento</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,11 +39,11 @@ $client =  $database->getClientData()
                     foreach ($bd->clients as $index => $client ) {
                         echo "<tr>";
                         echo "<td>" . $index . "</td>";
-                        echo "<td>" . $client->nome . "</td>";
-                        echo "<td>" . $client->cpf . "</td>";
+                        echo "<td>" . $client->usuario . "</td>";
+                        echo "<td>" . $client->email . "</td>";
+                        echo "<td>" . $client->senha . "</td>";
                         echo "<td>" . $client->nascimento . "</td>";
-                        echo "<td>" . $client->endereco . "</td>";
-                        echo "<td style='padding: 1rem'> <a href='updateuserhtml.php?update=$index'>Editar</a> | <a href='deleteUser.php?delete=$index'>Deletar</a> </td>";
+                        echo "<td style='padding: 1rem'> <a href='updateUserHtml.php?update=$index'>Editar</a> | <a href='deleteUser.php?delete=$index'>Deletar</a> </td>";
                         echo "<tr>";
                     }
                     ?>

@@ -7,14 +7,12 @@ $bd = json_decode($bd);
 
 if (!isset($bd->users[$index])) {
     $_SESSION["errors"] = "indice não existe";
-    header("location:listarusers.php");
+    header("location:listarClientes.php");
     exit();
 }
 
-$updatedusers = array_splice($bd->users, $index, 0);
-$bd->users = $updatedusers;
-
+$updatedClientes = array_splice($bd->users, $index, 0);
+$bd->users = $updatedClientes;
 
 $users = file_put_contents("bd.json", json_encode($bd, JSON_PRETTY_PRINT));
-header("location:listarusers.php");
-?>
+header("location:listarClientes.php");

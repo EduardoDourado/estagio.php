@@ -21,7 +21,7 @@ if (strlen($usuario) < 5)
 
 if (!empty($Validate)) {
     $_SESSION["errors"] = $Validate;
-    header("location:updateuserhtml.php?update=$index");
+    header("location:updateUserHtml.php?update=$index");
     exit();//mostrar os dados do usuario nos inputs
 }
 
@@ -31,9 +31,10 @@ if (!isset($bd->users[$index])) {
 
 
 $user = [
-    "username" => $usuario,
-    "password" => password_hash($password, PASSWORD_DEFAULT, ['cost' => 10]),
+    "usuario" => $usuario,
+    "senha" => password_hash($senha, PASSWORD_DEFAULT, ['cost' => 10]),
     "email" => $email,
+    "nascimento"=> $nascimento,
 ];
 
 $bd->users[$index] = $user;
@@ -41,5 +42,5 @@ $bd->users[$index] = $user;
 file_put_contents("bd.json", json_encode($bd, JSON_PRETTY_PRINT));
 
 $_SESSION["sucess"] = "Usuario Atualizado";
-header("location:updateuserhtml.php?update=$index");
+header("location:updateUserHtml.php?update=$index");
 ?>

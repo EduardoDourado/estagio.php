@@ -38,7 +38,7 @@ $user = $database->getUserDataById($index);
             echo "</ul>";
         }
         if ($sucess != false) {
-            echo "User successfully created";
+            echo "User successfully updated";
         }
         ?>
         <div>

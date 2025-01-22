@@ -17,17 +17,23 @@ if ($cnpj < 6) {
 if ($razaosocial < 5) {
     $Validate[] = "quantidade minima de caracteres necessaria maior que cinco";
 }
-var_dump($Validate);
-exit();
+
 if (!empty($Validate)) {
     $_SESSION["errors"] = $Validate;
     header("createHtml.php");
 }
 
+$data = [
+    'nomefantasia' => $nomefantasia,
+    'cnpj' => $cnpj,
+    'razaosocial' => $razaosocial,
 
-$PDOStatement = $pdo->query("insert into empresa (nome_fantasia,cpnj,razao_social,criado_em,Atualizado_em) values ('$nomefantasia', '$cnpj' , '$razaosocial', now(), now())");
-$results = $PDOStatement->execute();
+];
+
+$sql = ("insert into empresa (nomefantasia,cnpj,razaosocial,criadoem,Atualizadoem) values ('$nomefantasia', '$cnpj' , '$razaosocial', now(), now())");
+$statement= $pdo->prepare($sql);
+$statement->execute($data);
+
 $_SESSION["sucess"] = $Validate;
-
-header("createHtml.php");
+header("location:createHtml.php");
 ?>

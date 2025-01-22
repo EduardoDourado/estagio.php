@@ -2,9 +2,10 @@
 global $pdo;
 require "conexao.php";
 
-$PDOStatement = $pdo->query("select from empresa (nome_fantasia,cpnj,razao_social,criado_em,Atualizado_em) values ('$nomefantasia', '$cnpj' , '$razaosocial', now(), now())");
+
+$PDOStatement = $pdo->query("select * from empresa");
 $results = $PDOStatement->fetchAll();
-$value = $results;
+
 ?>
 
 <!DOCTYPE html>
@@ -24,28 +25,32 @@ $value = $results;
         <table>
             <thead>
                 <tr>
-                    
+
                     <td>Nome Fantasia</td>
                     <td>CNPJ</td>
                     <td>Razão Social</td>
+                    <td>Criado_em</td>
+                    <td>Atualizado_em</td>
+                    <td>Ação</td>
                 </tr>
             </thead>
-            <tbody>
+            <tbody method="post">
                 <?php
-                echo "<tr>";
-                echo "<td>" . $value . "<td>";
-                echo "<tr>";
+                foreach ($results as $empresa) {
+                    echo "<tr>";
+                    echo "<td>" . $empresa['nome_fantasia'] . "<td>";
+                    echo "<td>" . $empresa['cnpj'] . "<td>";
+                    echo "<td>" . $empresa['razao_social'] . "<td>";
+                    echo "<td>" . $empresa['criado_em'] . "<td>";
+                    echo "<td>" . $empresa['atualizado_em'] . "<td>";
+                    echo "<td><a href='delete.php?id=" . $empresa['id']. "'>deletar</a> | <a href='edit.php?id=" . $empresa['id'] . "'>editar</a><td>";
+                    echo "<tr>";
+                }
 
                 ?>
             </tbody>
         </table>
-    </div>
-    <div>
-        <form action="read.php" method="post">
 
-
-        </form>
-    </div>
 </body>
 
 </html>

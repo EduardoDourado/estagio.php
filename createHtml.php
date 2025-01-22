@@ -36,7 +36,7 @@ unset($_SESSION["sucess"]);
             <input type="text" id="nome_fantasia" name="nome_fantasia" placeholder="O nome fantasia" >
             <input type="text" id="cnpj" name="cnpj" placeholder="O Cnpj">
             <input type="text" id="razao_social" name="razao_social" placeholder="A razão social">
-
+           
             <input type="submit" value="Enviar Dados">
 
         </form>

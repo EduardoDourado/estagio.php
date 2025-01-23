@@ -2,7 +2,7 @@
 global $pdo;
 require "conexao.php";
 $id = $_GET["id"];
-$sql = "select * from empresa where id = :id";
+$sql = "SELECT * from empresa where id = :id";
 $statement = $pdo->prepare($sql);
 $statement->bindParam(":id",$id);
 $statement->fetch();

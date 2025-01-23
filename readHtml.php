@@ -3,7 +3,7 @@ global $pdo;
 require "conexao.php";
 
 
-$PDOStatement = $pdo->query("SELECT * from empresas");
+$PDOStatement = $pdo->query("SELECT * from empresa");
 $results = $PDOStatement->fetchAll();
 
 ?>
@@ -40,7 +40,6 @@ $results = $PDOStatement->fetchAll();
                     echo "<tr>";
                     echo "<td>" . $empresa['nome_fantasia'] . "<td>";
                     echo "<td>" . $empresa['cnpj'] . "<td>";
-                    echo "<td>" . $empresa['razao_social'] . "<td>";
                     echo "<td>" . $empresa['criado_em'] . "<td>";
                     echo "<td>" . $empresa['atualizado_em'] . "<td>";
                     echo "<td><a href='delete.php?id=" . $empresa['id']. "'>deletar</a> | <a href='edit.php?id=" . $empresa['id'] . "'>editar</a><td>";

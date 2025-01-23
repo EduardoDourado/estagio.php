@@ -30,7 +30,7 @@ $data = [
 
 ];
 
-$sql = ("INSERT into empresas (nome_fantasia,cnpj,razao_social,criado_em,atualizado_em) values ('$nomefantasia', '$cnpj' , '$razaosocial', now(), now())");
+$sql = ("INSERT into empresa (nome_fantasia,cnpj,razao_social,criado_em,atualizado_em) values ('$nomefantasia', '$cnpj' , '$razaosocial', now(), now())");
 $statement = $pdo->prepare($sql);
 $statement->execute($data);
 

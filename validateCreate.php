@@ -24,16 +24,15 @@ if (!empty($Validate)) {
 }
 
 $data = [
-    'nomefantasia' => $nomefantasia,
+    'nome_fantasia' => $nomefantasia,
     'cnpj' => $cnpj,
-    'razaosocial' => $razaosocial,
+    'razao_social' => $razaosocial,
 
 ];
 
-$sql = ("insert into empresa (nomefantasia,cnpj,razaosocial,criadoem,Atualizadoem) values ('$nomefantasia', '$cnpj' , '$razaosocial', now(), now())");
-$statement= $pdo->prepare($sql);
+$sql = ("INSERT into empresas (nome_fantasia,cnpj,razao_social,criado_em,atualizado_em) values ('$nomefantasia', '$cnpj' , '$razaosocial', now(), now())");
+$statement = $pdo->prepare($sql);
 $statement->execute($data);
 
 $_SESSION["sucess"] = $Validate;
 header("location:createHtml.php");
-?>

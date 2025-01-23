@@ -3,7 +3,7 @@ global $pdo;
 require "conexao.php";
 
 
-$PDOStatement = $pdo->query("select * from empresa");
+$PDOStatement = $pdo->query("SELECT * from empresas");
 $results = $PDOStatement->fetchAll();
 
 ?>

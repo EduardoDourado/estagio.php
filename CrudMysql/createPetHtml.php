@@ -12,7 +12,7 @@ unset($_SESSION["sucess"]);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de clientes</title>
+    <title>Cadastro de pets</title>
 </head>
 
 <body>
@@ -31,9 +31,9 @@ unset($_SESSION["sucess"]);
         ?>
     </div>
     <div>
-        <h2>Cadastrar Clientes</h2>
+        <h2>Cadastrar Pets</h2>
         <form action="createPet.php" method="post">
-            <input type="text" id="name" name="name" placeholder="Nome do cliente" required>
+            <input type="text" id="name" name="name" placeholder="Nome do animal" required>
             <input type="text" id="breed" name="breed" placeholder="Raça do animal" required>
 
             <input type="submit" value="Cadastrar">

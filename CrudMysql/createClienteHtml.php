@@ -33,12 +33,13 @@ unset($_SESSION["sucess"]);
     <div>
         <h2>Cadastrar Clientes</h2>
         <a href="readClienteHtml.php">Listar Clientes</a>
-        <form action="createCliente.php" method="post">
+        <form action="createCliente.php"  method="post">
             <input type="text" id="name" name="name" placeholder="Nome do cliente" required>
             <input type="text" id="cpf" name="cpf" placeholder="cpf" required>
 
-            <input type="submit" value="Cadastrar">
+            <input type="submit" value="Cadastrar" >
         </form>
+        <a href="createPetHtml.php">Cadastrar Pet</a>
     </div>
 </body>
 

@@ -37,3 +37,4 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute($data);
 
 $_SESSION["sucess"] = $validate;
+header("location:createClienteHtml.php");

@@ -1,17 +1,17 @@
 <?php
 global $pdo;
-require "conexao.php";
+require "../conexao.php";
 
-$nome = $_POST['name'];
+$name = $_POST['name'];
 $breed = $_POST['breed'];
 
 
 $validate = [];
 
-if (empty($nome)) {
+if (empty($name)) {
     $validate[] = "Nome é invalido, campo deve ser preenchido";
 }
-if (!$nome >= 4) {
+if (!$name >= 4) {
     $validate[] = "Nome deve ter no minimo 4 caracteres";
 }
 if (empty($breed)) {
@@ -31,7 +31,7 @@ $data = [
     'breed' => $breed,
 ];
 
-$sql = ("INSERT INTO cliente (name,breed,created_at,updated_at) values (:name, :breed,now(),now())"); //nos values posso colocar qualque nome desde que esteja batendo com a sintaxe do objeto;
+$sql = ("INSERT INTO pet (name,breed,created_at,updated_at) values (:name, :breed,now(),now())"); //nos values posso colocar qualque nome desde que esteja batendo com a sintaxe do objeto;
 $stmt = $pdo->prepare($sql);
 $stmt->execute($data);
 

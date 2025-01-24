@@ -1,9 +1,19 @@
 <?php
+global $pdo;
+require "../conexao.php";
 session_start();
 $errors = $_SESSION["errors"] ?? false;
 unset($_SESSION["errors"]);
 $sucess = $_SESSION["sucess"] ?? false;
 unset($_SESSION["sucess"]);
+
+$sql = "SELECT cliente.name , cliente.id FROM cliente  ";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$resultados = $stmt->fetchAll();
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +45,18 @@ unset($_SESSION["sucess"]);
         <form action="createPet.php" method="post">
             <input type="text" id="name" name="name" placeholder="Nome do animal" required>
             <input type="text" id="breed" name="breed" placeholder="Raça do animal" required>
-
+            
+            <select name="cliente_id">
+                <?php 
+                foreach ($resultados as $cliente) {
+                   
+                  echo "<option value='".$cliente['id']."'>" . $cliente['name']."</option>";
+                        
+                    
+                }
+                ?>
+              
+            </select>
             <input type="submit" value="Cadastrar">
         </form>
     </div>

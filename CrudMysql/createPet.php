@@ -2,8 +2,10 @@
 global $pdo;
 require "../conexao.php";
 
+
 $name = $_POST['name'];
 $breed = $_POST['breed'];
+$clienteid = $_POST['cliente_id'];
 
 
 $validate = [];
@@ -23,16 +25,19 @@ if (!$breed >= 4 ) {
 
 if (!empty($validate)) {
     $_SESSION["errors"] = $validate;
-    header("createClienteHtml.php");
+    header("createPetHtml.php?id=", $id);
 }
 
 $data = [
     'name' => $name,
     'breed' => $breed,
+    'cliente_id' => $clienteid,
 ];
 
-$sql = ("INSERT INTO pet (name,breed,created_at,updated_at) values (:name, :breed,now(),now())"); //nos values posso colocar qualque nome desde que esteja batendo com a sintaxe do objeto;
+$sql = ("INSERT INTO pet (name,breed,created_at,updated_at, cliente_id) values (:name, :breed,now(),now(),:cliente_id)"); //nos values posso colocar qualque nome desde que esteja batendo com a sintaxe do objeto;
 $stmt = $pdo->prepare($sql);
 $stmt->execute($data);
 
 $_SESSION["sucess"] = $validate;
+header("location:readPetHtml.php");
+?>

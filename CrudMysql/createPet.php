@@ -3,9 +3,9 @@ global $pdo;
 require "../conexao.php";
 
 
-$name = $_POST['name'];
-$breed = $_POST['breed'];
-$clienteid = $_POST['cliente_id'];
+$name = $_POST["name"];
+$breed = $_POST["breed"];
+$clienteid = $_POST["cliente_id"];
 
 
 $validate = [];

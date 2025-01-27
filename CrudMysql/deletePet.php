@@ -17,8 +17,8 @@ if ($resultado == false) {
     header("readPetHtml.php");
 }
 
-$sql = "DELETE FROM pet WHERE id= :id";
+$sql = "DELETE FROM pet WHERE pet.id= :id";
 $stmt = $pdo->prepare($sql);
-$stmt->bindParam(":id", $id);
+$stmt->bindParam("id", $id);
 $stmt->execute();
 header("location:readPetHtml.php");

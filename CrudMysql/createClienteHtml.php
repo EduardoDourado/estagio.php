@@ -25,9 +25,13 @@ unset($_SESSION["sucess"]);
             }
             echo "<ul>";
         }
-        if ($sucess != false) {
-            echo "Cadastrado com sucesso!";
+        else {
+            echo"<ul>";
+            echo "<li>" .$sucess . "<li>";
+            echo"<ul>";
         }
+    
+       
         ?>
     </div>
     <div>

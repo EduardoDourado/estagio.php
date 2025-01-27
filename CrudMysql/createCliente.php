@@ -1,4 +1,5 @@
 <?php
+session_start();
 global $pdo;
 require "../conexao.php";
 
@@ -10,11 +11,11 @@ $cpf = $_POST["cpf"];
 $validate = [];
 
 
-if (!$name >= 5) {
+if (strlen($name >= 5)) {
     $validate[] = "Nome deve ter no minimo 5 caracteres";
 }
 
-if (!$cpf == 11) {
+if (!strlen($cpf == 11)) { 
     $validate[] = "Cpf deve ter 11 caracteres";
 }
 
@@ -23,7 +24,7 @@ if (!empty($validate)) {
     header("createClienteHtml.php");
 }
 
-$_SESSION["sucess"] = $validate;
+$_SESSION["sucess"] = "cadastrado com sucesso";
 
 $data = [
     'name' => $name,
@@ -35,3 +36,4 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute($data);
 
 header("location:createClienteHtml.php");
+?>

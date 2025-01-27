@@ -42,6 +42,7 @@ $results = $PDOStatement->fetchAll();
                 }
 
                 ?>
+                <a href="createPetHtml.php">Cadastrar Pets</a>
             </tbody>
         </table>
     </div>

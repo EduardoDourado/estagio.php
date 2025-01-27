@@ -1,4 +1,5 @@
 <?php
+
 global $pdo;
 require "../conexao.php";
 

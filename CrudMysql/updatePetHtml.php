@@ -72,6 +72,7 @@ $results = $stmt->fetchAll();
             <input type="submit" value="Editar">
         </form>
     </div>
+    
 </body>
 
 </html>

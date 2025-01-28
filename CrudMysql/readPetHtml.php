@@ -37,8 +37,8 @@ if ($error) {
                     <td>Raça</td>
                     <td>Criado_em</td>
                     <td>Atualizado_em</td>
-                    <td>Ação</td>
                     <td>Nome Cliente</td>
+                    <td>Ação</td>
 
 
                 </tr>

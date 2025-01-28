@@ -54,18 +54,18 @@ $results = $stmt->fetchAll();
             <input type="text" id="breed" name="breed" placeholder="raça do pet" value="<?php echo $resultado["breed"] ?>">
             <input type="hidden" name="id" value="<?php echo $id ?>">
 
-            <select name="cliente_id">
+            <select name="cliente_id" >
             <?php
             foreach ($results as  $cliente) {
                 if($cliente["id"] == $resultado["cliente_id"])
               {
                 echo "<option value='".$cliente['id']."' selected>" . $cliente['name']."</option>";
-              }else {
-                echo "<option value='".$cliente['id']."'>" . $cliente['name']."</option>";
-              }
-
+            }else {
+              echo "<option value='".$cliente['id']."'>" . $cliente['name']."</option>";
             }
-           
+                
+            }
+            
             ?>
             </select>
 

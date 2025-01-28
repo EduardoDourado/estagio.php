@@ -59,6 +59,8 @@ $resultados = $stmt->fetchAll();
             </select>
             <input type="submit" value="Cadastrar">
         </form>
+        <a href="readPetHtml.php">Lista de Pets</a>
+        <a href="createClienteHtml.php">Cadastrar Cliente</a>
     </div>
 </body>
 

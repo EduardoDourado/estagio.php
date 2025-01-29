@@ -11,10 +11,39 @@
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/NBS/Documents/GitHub/estagio.php/symfony/src/Controller/UserController.php</code></li>
-        <li>Your template at <code>C:/Users/NBS/Documents/GitHub/estagio.php/symfony/templates/user/index.html.twig</code></li>
-    </ul>
+<table border='1'>
+
+<thead>
+
+<tr>
+<th>Nome</th>
+<th>Idade</th>
+<th>Ação</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for user in users %}
+<tr>
+<td>{{user.name}}</td>
+<td>{{user.idade}}</td>
+<td>
+<a href="{{path('app_user_show', {id: user.id})}}">Ver</a>
+<a href="{{path('app_user_edit', {id: user.id})}}">Editar</a>
+</td>
+
+</tr>
+
+</tbody>
+{% endfor %}
+</table>
+
+    {# Nome: {{user.name}}<br/>
+   idade: {{user.idade}}<br/>
+  Status: {{user.status}}<br/>
+  Criado em: {{user.createdAt|format_datetime('short','short',locale:'pt', timezone:'America/Porto_Velho') }}<br/>
+    #}
 </div>
 {% endblock %}
